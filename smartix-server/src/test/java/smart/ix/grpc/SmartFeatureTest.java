@@ -35,11 +35,12 @@ public class SmartFeatureTest {
                 .await().atMost(Duration.ofSeconds(5));
         assertThat(reply.getWeathersCount()).isEqualTo(2);
     }
-//    @Test
-//    public void searchMovies_passMatrixAndReturnsTheInformation() {
-//        MoviesResponse reply = MutinySmartFeatureGrpc.newMutinyStub(channel)
-//                .searchMovies(MovieRequest.newBuilder().setQuery("matrix").build())
-//                .await().atMost(Duration.ofSeconds(5));
-//        assertThat(reply.getMoviesCount()).isEqualTo(8);
-//    }
+
+    @Test
+    public void searchMovies_passMatrixAndReturnsTheInformation() {
+        MoviesResponse reply = MutinySmartFeatureGrpc.newMutinyStub(channel)
+                .searchMovies(MovieRequest.newBuilder().setQuery("matrix").build())
+                .await().atMost(Duration.ofSeconds(5));
+        assertThat(reply.getMoviesCount()).isEqualTo(8);
+    }
 }
