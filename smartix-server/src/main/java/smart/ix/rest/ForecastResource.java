@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Produces(MediaType.APPLICATION_JSON)
-@Path("/api/v1/forecast")
+@Path("/api/v1/weather")
 public class ForecastResource {
 
     @RestClient
