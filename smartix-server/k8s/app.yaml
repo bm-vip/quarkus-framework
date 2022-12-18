@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: smartix-server
+  name: smartix-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smartix-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: smartix-server
+    spec:
+      containers:
+        - image: smartix-server-image
+          name: smartix-server-image
+          resources: {}
+          imagePullPolicy: IfNotPresent
+          env:
+          - name: QUARKUS_DATASOURCE_URL
+            value: mongodb://mongo-db:27017
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: smartix-server
+  name: smartix-server
+spec:
+  ports:
+    - name: 2022-2022
+      port: 2022
+      protocol: TCP
+      targetPort: 2022
+  selector:
+    app: smartix-server
+  type: LoadBalancer
+status:
+  loadBalancer: {}

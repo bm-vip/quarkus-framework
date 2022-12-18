@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.13.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="behrooz">
+        <ext:insertOne collectionName="Camera">
+            <ext:document>{"name":"Camera1", "type": "CAMERA"}</ext:document>
+        </ext:insertOne>
+    </changeSet>
+    <changeSet id="2" author="behrooz">
+        <ext:insertOne collectionName="Watch">
+            <ext:document>{"name":"Watch1", "type": "WATCH", "burnedCalories": 50}</ext:document>
+        </ext:insertOne>
+    </changeSet>
+</databaseChangeLog>

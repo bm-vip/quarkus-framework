@@ -1,0 +1,35 @@
+syntax = "proto3";
+import "device-type.proto";
+
+option java_multiple_files = true;
+option java_package = "smart.ix";
+
+
+service SmartModel {
+    rpc saveCameraInfo (CameraModel) returns (CameraModel) {}
+    rpc getCameraInfo (CameraModel) returns (CameraModels) {}
+    rpc saveWatchInfo (WatchModel) returns (WatchModel) {}
+    rpc getWatchInfo (WatchModel) returns (WatchModels) {}
+}
+
+
+message CameraModel {
+    string id = 1;
+    string name = 2;
+    string image = 3;
+    string url = 4;
+    DeviceType type = 5;
+}
+
+message WatchModel {
+    string id = 1;
+    string name = 2;
+    int32 burnedCalories = 3;
+    DeviceType type = 4;
+}
+message CameraModels{
+    repeated CameraModel models = 1;
+}
+message WatchModels{
+    repeated WatchModel models = 1;
+}

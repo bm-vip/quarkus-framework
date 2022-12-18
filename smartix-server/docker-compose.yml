@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    image: smartix-server-image
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm
+    depends_on:
+      - mongo-db
+    ports:
+      - "2022:2022"
+    environment:
+      - QUARKUS_DATASOURCE_URL=mongodb://mongo-db:27017
+    networks:
+      - mongo-compose-network
+  mongo-db:
+    container_name: mongodb-container
+    image: mongo
+    environment:
+      MONGODB_DATABASE: smartix
+    ports:
+      - "27017:27017"
+    networks:
+      - mongo-compose-network
+networks:
+  mongo-compose-network:
+    driver: bridge

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "smart.ix";
+
+
+service SmartFeature {
+    rpc searchMovies (MovieRequest) returns (MoviesResponse) {}
+    rpc forecastWeather (WeatherRequest) returns (WeathersResponse) {}
+}
+
+message MovieRequest {
+    string query = 1;
+}
+message MovieResponse {
+    string name = 1;
+    string url = 2;
+    string actors = 3;
+    int32 year = 4;
+    int32 rank = 5;
+}
+message MoviesResponse {
+    repeated MovieResponse movies = 5;
+}
+
+message WeatherRequest {
+    string query = 1;
+    int32 days = 2;
+}
+message WeatherResponse {
+    string date = 1;
+    string condition = 2;
+    string icon = 3;
+    double avgTempC= 4;
+}
+message WeathersResponse {
+    repeated WeatherResponse weathers = 1;
+}

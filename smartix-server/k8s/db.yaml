@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mongo-db
+  name: mongo-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-db
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongo-db
+    spec:
+      containers:
+        - image: mongo
+          name: mongo
+          resources: {}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 27017
+          env:
+          - name: MONGODB_DATABASE
+            value: smartix
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mongo-db
+  name: mongo-db
+spec:
+  ports:
+    - name: 27017-27017
+      port: 27017
+      protocol: TCP
+      targetPort: 27017
+  selector:
+    app: mongo-db
+  type: ClusterIP
+status:
+  loadBalancer: {}
