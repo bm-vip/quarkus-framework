@@ -13,7 +13,7 @@ docker-compose up
 ```
 2. Prerequisites for using current OS
     1. Install Java 17
-    2. Install Postgres sql database
+    2. Install mongo-db database
     3. Maven 3
     4. run the following command:
 ```
