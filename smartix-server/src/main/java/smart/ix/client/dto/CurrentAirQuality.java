@@ -10,85 +10,36 @@
  * Do not edit the class manually.
  */
 
-package smart.ix.model;
+package smart.ix.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
-
 @Data
-public class Current {
-  @JsonProperty("last_updated_epoch")
-  private Integer lastUpdatedEpoch = null;
+public class CurrentAirQuality {
+  @JsonProperty("co")
+  private BigDecimal co = null;
 
-  @JsonProperty("last_updated")
-  private String lastUpdated = null;
+  @JsonProperty("no2")
+  private BigDecimal no2 = null;
 
-  @JsonProperty("temp_c")
-  private BigDecimal tempC = null;
+  @JsonProperty("o3")
+  private BigDecimal o3 = null;
 
-  @JsonProperty("temp_f")
-  private BigDecimal tempF = null;
+  @JsonProperty("so2")
+  private Integer so2 = null;
 
-  @JsonProperty("is_day")
-  private Integer isDay = null;
+  @JsonProperty("pm2_5")
+  private BigDecimal pm25 = null;
 
-  @JsonProperty("condition")
-  private CurrentCondition condition = null;
+  @JsonProperty("pm10")
+  private Integer pm10 = null;
 
-  @JsonProperty("wind_mph")
-  private BigDecimal windMph = null;
+  @JsonProperty("us-epa-index")
+  private Integer usEpaIndex = null;
 
-  @JsonProperty("wind_kph")
-  private BigDecimal windKph = null;
-
-  @JsonProperty("wind_degree")
-  private Integer windDegree = null;
-
-  @JsonProperty("wind_dir")
-  private String windDir = null;
-
-  @JsonProperty("pressure_mb")
-  private Integer pressureMb = null;
-
-  @JsonProperty("pressure_in")
-  private BigDecimal pressureIn = null;
-
-  @JsonProperty("precip_mm")
-  private Integer precipMm = null;
-
-  @JsonProperty("precip_in")
-  private Integer precipIn = null;
-
-  @JsonProperty("humidity")
-  private Integer humidity = null;
-
-  @JsonProperty("cloud")
-  private Integer cloud = null;
-
-  @JsonProperty("feelslike_c")
-  private Integer feelslikeC = null;
-
-  @JsonProperty("feelslike_f")
-  private BigDecimal feelslikeF = null;
-
-  @JsonProperty("vis_km")
-  private Integer visKm = null;
-
-  @JsonProperty("vis_miles")
-  private Integer visMiles = null;
-
-  @JsonProperty("uv")
-  private Integer uv = null;
-
-  @JsonProperty("gust_mph")
-  private BigDecimal gustMph = null;
-
-  @JsonProperty("gust_kph")
-  private BigDecimal gustKph = null;
-
-  @JsonProperty("air_quality")
-  private CurrentAirQuality airQuality = null;
+  @JsonProperty("gb-defra-index")
+  private Integer gbDefraIndex = null;
 }

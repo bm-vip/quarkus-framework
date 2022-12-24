@@ -2,8 +2,8 @@ package smart.ix.rest;
 
 import io.quarkus.grpc.GrpcClient;
 import smart.ix.*;
-import smart.ix.dto.CameraDto;
-import smart.ix.dto.WatchDto;
+import smart.ix.client.dto.CameraDto;
+import smart.ix.client.dto.WatchDto;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

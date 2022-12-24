@@ -1,4 +1,4 @@
-package smart.ix.model;
+package smart.ix.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.ArrayList;
 
 @Data
-public class MovieModel {
+public class MovieDto {
     @JsonProperty("d")
     private ArrayList<D> d;
     @JsonProperty("q")

@@ -3,8 +3,8 @@ package smart.ix.mapper;
 import org.mapstruct.Mapper;
 import smart.ix.WeatherResponse;
 import smart.ix.WeathersResponse;
-import smart.ix.model.ForecastForecastday;
-import smart.ix.model.InlineResponse2001;
+import smart.ix.client.dto.ForecastForecastday;
+import smart.ix.client.dto.InlineResponse2001;
 
 import java.util.Collections;
 import java.util.stream.Collectors;

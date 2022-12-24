@@ -2,8 +2,8 @@ package smart.ix.client;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
-import smart.ix.model.InlineResponse200;
-import smart.ix.model.InlineResponse2001;
+import smart.ix.client.dto.InlineResponse200;
+import smart.ix.client.dto.InlineResponse2001;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

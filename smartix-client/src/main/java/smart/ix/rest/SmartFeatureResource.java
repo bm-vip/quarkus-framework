@@ -2,8 +2,8 @@ package smart.ix.rest;
 
 import io.quarkus.grpc.GrpcClient;
 import smart.ix.*;
-import smart.ix.dto.MovieDto;
-import smart.ix.dto.WeatherDto;
+import smart.ix.client.dto.MovieDto;
+import smart.ix.client.dto.WeatherDto;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package smart.ix.model;
+package smart.ix.client.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

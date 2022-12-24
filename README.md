@@ -1,7 +1,7 @@
 # smartix-project
 ## Installation
 You have 2 ways for installation:\
-Before running the application, the following commands must be executed in the terminal from the project root directory:
+Before running the application, the following commands must be executed in the terminal from the smartix-server root directory:
 1. Prerequisites for using Dockerfile (recommended)
     1. Install Java 17
     2. Maven 3
@@ -18,10 +18,10 @@ docker-compose up
     4. run the following command:
 ```
 mvn clean install
-mvn spring-boot:run
+mvn quarkus:dev
 ```
 ## Kubernetes configuration
-For API scalability, Kubernetes should be installed and submit the yml files that definition to k8s directory with the following command:
+For API scalability, kubectl and (kubeadm or minikube) should be installed and submit the yml files that definition to k8s directory with the following command:
 ```
 kubectl apply -f k8s
 ```

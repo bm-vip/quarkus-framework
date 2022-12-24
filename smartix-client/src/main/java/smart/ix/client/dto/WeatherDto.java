@@ -1,4 +1,4 @@
-package smart.ix.dto;
+package smart.ix.client.dto;
 
 import smart.ix.WeatherResponse;
 

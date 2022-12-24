@@ -12,8 +12,8 @@ import smart.ix.client.ForecastClient;
 import smart.ix.client.MovieClient;
 import smart.ix.mapper.MovieMapper;
 import smart.ix.mapper.WeatherMapper;
-import smart.ix.model.InlineResponse2001;
-import smart.ix.model.MovieModel;
+import smart.ix.client.dto.InlineResponse2001;
+import smart.ix.client.dto.MovieDto;
 
 import javax.inject.Inject;
 
@@ -39,8 +39,8 @@ public class SmartFeatureImpl implements SmartFeature {
     @Override
     @SneakyThrows
     public Uni<MoviesResponse> searchMovies(MovieRequest request) {
-        MovieModel movieModel = movieClient.search(imdbApiKey,imdbApiHost,request.getQuery());
-        return Uni.createFrom().item(movieMapper.toResponse(movieModel));
+        MovieDto movieDto = movieClient.search(imdbApiKey,imdbApiHost,request.getQuery());
+        return Uni.createFrom().item(movieMapper.toResponse(movieDto));
     }
 
     @Override

@@ -3,8 +3,8 @@ package smart.ix.mapper;
 import org.mapstruct.Mapper;
 import smart.ix.MovieResponse;
 import smart.ix.MoviesResponse;
-import smart.ix.model.D;
-import smart.ix.model.MovieModel;
+import smart.ix.client.dto.D;
+import smart.ix.client.dto.MovieDto;
 
 import java.util.Collections;
 import java.util.stream.Collectors;
@@ -25,7 +25,7 @@ public interface MovieMapper {
                 .setRank(getOrDefault(() -> model.getRank(), 0))
                 .build();
     }
-    default MoviesResponse toResponse(final MovieModel model) {
+    default MoviesResponse toResponse(final MovieDto model) {
         if (model == null)
             return MoviesResponse.newBuilder().build();
         return MoviesResponse.newBuilder()
