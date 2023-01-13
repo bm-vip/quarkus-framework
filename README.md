@@ -1,4 +1,4 @@
-# smartix-project
+# Quarkus framework and Vertex
 ## Installation
 You have 2 ways for installation:\
 Before running the application, the following commands must be executed in the terminal from the smartix-server root directory:
